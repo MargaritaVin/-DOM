@@ -8,8 +8,8 @@ const getUsers = async () => {
         if (!response.ok) {
             throw new Error("Error: not found")
         }
-        const date = await response.json();
-        date.map(({title}) => {
+        const data = await response.json();
+        data.map(({title}) => {
             let li = document.createElement('li');
             li.append(title);
             li.classList.add('album_title');
