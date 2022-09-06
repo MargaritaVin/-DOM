@@ -1,0 +1,11 @@
+ul {
+
+    background-color: #f1b3b340;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin: 0;
+    padding: 0;
+}
+.album_title {
+    padding: 10px 20px;
+}
