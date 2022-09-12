@@ -25,8 +25,8 @@ const getUsers = async () => {
 getUsers();
 
 albums.addEventListener("click", (event) => {
-    const isRemoveButton = event.target.nodeName === "BUTTON";
-    if (isRemoveButton) {
+    const isDeleteButton = event.target.nodeName === "BUTTON";
+    if (isDeleteButton) {
         const albumTitleBlock = event.target.closest(".album_title");
         albumTitleBlock.remove();
     }
