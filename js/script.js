@@ -1,6 +1,6 @@
 "use strict";
 
-let albums = document.getElementById('albums')
+let albums = document.getElementById('albums');
 
 const getUsers = async () => {
     try {
@@ -9,9 +9,12 @@ const getUsers = async () => {
             throw new Error("Error: not found")
         }
         const data = await response.json();
+        console.log(data)
         data.map(({title}) => {
             let li = document.createElement('li');
-            li.append(title);
+            let button = document.createElement('button');
+            button.innerHTML = "Delete";
+            li.append(title, button);
             li.classList.add('album_title');
             albums.append(li)
         });
@@ -20,3 +23,11 @@ const getUsers = async () => {
     }
 };
 getUsers();
+
+albums.addEventListener("click", (event) => {
+    const isRemoveButton = event.target.nodeName === "BUTTON";
+    if (isRemoveButton) {
+        const albumTitleBlock = event.target.closest(".album_title");
+        albumTitleBlock.remove();
+    }
+});
